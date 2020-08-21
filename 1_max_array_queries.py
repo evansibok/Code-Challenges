@@ -56,23 +56,3 @@ def maxArrayQueries(n, queries):
     #     print(test_list[i+1])
     #     test_list[i] += 100
     pass
-
-
-if __name__ == '__main__':
-    # fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
-    n = int(input().strip())
-
-    queries_rows = int(input().strip())
-    queries_columns = int(input().strip())
-
-    queries = []
-
-    for _ in range(queries_rows):
-        queries.append(list(map(int, input().rstrip().split())))
-
-    result = maxArrayQueries(n, queries)
-
-    fptr.write(str(result) + '\n')
-
-    fptr.close()

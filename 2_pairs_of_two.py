@@ -27,11 +27,11 @@ test_arr = [3, 5, 2, -4, 8, 11]
 def pairs_of_two(arr, sum):
     result = []
 
-    for first in arr:
-        prev = first
-        for second in range(1, len(arr)):
-            if prev + arr[second] == sum:
-                result.append([prev, arr[second]])
+    # for first in arr:
+    #     prev = first
+    #     for second in range(1, len(arr)):
+    #         if prev + arr[second] == sum:
+    #             result.append([prev, arr[second]])
     return result
 
 
