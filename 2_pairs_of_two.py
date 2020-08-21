@@ -8,18 +8,12 @@
 
 # Should return [[11, -4], [2, 5]]
 
-# UPER
+# UPER APPROACH
 
-# Move through the list getting each element
-# Save the first element to a temp variable
-# Then get the element after it and add them together
-# If it sums up to the sum, I'll add the two numbers to a list
-# save somewhere
-# and return a list of the pairs at the end
-
-sum1 = 7
+# SOLUTION IN QUADRATIC TIME COMPLEXITY
 
 test_arr = [3, 5, 2, -4, 8, 11]
+sum1 = 7
 
 # key, value, index
 
@@ -27,12 +21,57 @@ test_arr = [3, 5, 2, -4, 8, 11]
 def pairs_of_two(arr, sum):
     result = []
 
-    # for first in arr:
-    #     prev = first
-    #     for second in range(1, len(arr)):
-    #         if prev + arr[second] == sum:
-    #             result.append([prev, arr[second]])
+    # Move through the list getting each element
+    for first in range(len(arr)):
+        # Save the first element to a temp variable
+        prev = arr[first]
+    # Then get the element after it and add them together
+        for second in range(first + 1, len(arr)):
+            # If it sums up to the sum
+            if prev + arr[second] == sum:
+                # Add the two numbers to a list
+                # save somewhere
+                result.append([prev, arr[second]])
+    # and return a list of the pairs at the end
     return result
 
 
-print(pairs_of_two(test_arr, sum1))
+print("pairs", pairs_of_two(test_arr, sum1))
+
+
+# SOLUTION IN LINEAR TIME COMPLEXITY
+
+test = [3, 5, 2, -4, 8, 11]
+target = 7
+
+# target-> 7
+# hashtable key -> difference
+# hashtable value -> element itself
+
+
+def new_pairs_of_two(arr, target):
+    # Initialize a hashtable to track the difference
+    diff = {}
+    result = []
+
+    # Move through the list
+    # Get the element in the list
+    for element in arr:
+        # Check if the element exists in the hashtable
+        if element in diff:
+            # If it does,
+            # append a list of the element and
+            # it's corresponding value on the hashtable to the result
+            result.append([diff[element], element])
+        # Otherwise
+        else:
+            # Subtract the element from the target and get the difference
+            difference = target - element
+            # Add the element as value to the hashtable
+            # And the difference as the corresponding key
+            diff[difference] = element
+    # At the end, return the resulting array of all arrays
+    return result
+
+
+print("new pairs", new_pairs_of_two(test, target))
