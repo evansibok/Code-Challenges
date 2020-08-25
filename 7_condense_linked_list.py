@@ -32,13 +32,13 @@
 def condense_linked_list(node):
     # Initialize a visited list to track
     # previously occured values
-    visited = []
+    visited = []  # O(n)
     # Get the value of the current node
-    cur_node = node
+    cur_node = node  # O(1) -> represents one node at a time
     # Move through the linked list
-    while cur_node is not None:
+    while cur_node is not None:  # O(n)
         # If the current node's value exists in visited
-        if cur_node.value in visited:
+        if cur_node.value in visited:  # O(n)
             # Move to the next node
             cur_node = cur_node.next
         # Otherwise
@@ -48,3 +48,6 @@ def condense_linked_list(node):
     # Return the new list which contains
     # unrepeated node values
     return visited
+
+# Time Complexity -> O(n^2)
+# Space Complexity -> O(n)

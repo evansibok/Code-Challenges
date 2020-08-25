@@ -36,7 +36,7 @@ def first_not_repeating_character(s):
 
     new_string = s.lower()
     seen = []
-    occured_once = []
+    occured_once = []  # O(n) + O(n) + O(n) -> 3n -> O(n)
 
     # Move through the lowercase String
     # Get each character
@@ -44,7 +44,7 @@ def first_not_repeating_character(s):
         # If character not in seen
         if letter not in seen:
             # Add it to the seen list
-            seen.append(letter)
+            seen.append(letter)  # O(n^2)
 
     # Run a count to check how many times letters
     # from the seen list occurs in the String
@@ -52,7 +52,7 @@ def first_not_repeating_character(s):
         # If the character occurs only once
         if new_string.count(char) == 1:
             # Add it to the new occured_once list
-            occured_once.append(char)
+            occured_once.append(char)  # O(n^2)
 
     # If the occured_once list is empty
     # It means there are no characters that occurs only once
@@ -62,6 +62,9 @@ def first_not_repeating_character(s):
     # Otherwise return the first letter that occurs once
     else:
         return occured_once[0]
+
+# Time Complexity -> O(n^2)
+# Space Complexity -> O(n)
 
 
 print('first_not_repeated', first_not_repeating_character(s))

@@ -43,7 +43,7 @@ def merge_packages(items, limit):
         return []
 
     # Initialize a hashtable to track the difference
-    diff = {}
+    diff = {}  # O(n) -> Dependent on the number of input items
     # Move through each element in the list
     for index, item in enumerate(items):
         # Get the element and the index
@@ -72,6 +72,9 @@ def merge_packages(items, limit):
             # and save the difference as the key on the hashtable
             # and the index as the value
             diff[difference] = index
+
+# Time Complexity -> O(n)
+# Space Complexity -> O(n)
 
 
 print('merge_packages', merge_packages(items, limit))
