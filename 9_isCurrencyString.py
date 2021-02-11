@@ -1,9 +1,10 @@
-#
+# NOT SOLVED
+
 # Complete the 'isCurrency' function below.
-#
+
 # The function is expected to return a BOOLEAN.
 # The function accepts STRING strAmount as parameter.
-#
+
 
 # Does string represent valid currency amount
 # return True, if yes
@@ -47,8 +48,6 @@
 # 10,000 - 5
 # 100,000 - 6
 # 1,100,000 - 7
-
-#  NOT COMPLETE
 
 
 def isCurrency(strAmount):
